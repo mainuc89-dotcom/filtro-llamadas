@@ -1,0 +1,55 @@
+== Instalando
+Performing Streamed Install
+Success
+== Primera apertura (sin permisos)
+== captura 01-inicio-sin-activar
+== Concediendo rol y permisos
+== rol asignado a: app.filtro (tras 1s)
+== captura 02-inicio-activo
+== 800: debe bloquearse sin sonar
+== llamada entrante 800123456: OK 
+== captura 03-durante-800
+== 809: debe bloquearse
+== llamada entrante 8091234567: OK 
+== Celular: suena con identificador
+== llamada entrante 912345678: OK 
+== captura 04-celular-identificador
+== captura 05-despues-de-cortar
+== 600: suena con identificador
+== llamada entrante 6006002020: OK 
+== captura 06-empresa-600
+== Internacional
+== llamada entrante +18765551234: OK 
+== captura 07-internacional
+== Notificaciones
+== captura 08-notificaciones
+== Pantallas
+== captura 09-registro
+ok: Internacional · Jamaica [242,726][708,789]
+== captura 10-detalle
+== captura 11-reglas
+== captura 12-reglas-medio
+== captura 13-reglas-abajo
+== Consultar un número seleccionado en otra app
+== captura 14-consulta
+== Modo oscuro
+== captura 15-oscuro-inicio
+== llamada entrante 452123456: OK 
+== captura 16-oscuro-identificador
+== Pantalla bloqueada: llamada de celular
+== llamada entrante 987654321: OK 
+== captura 17-bloqueado-identificador
+== Modo silenciar: el 800 entra sin sonar
+ok: Silenciar [684,1140][829,1193]
+== captura 18-reglas-silenciar
+== llamada entrante 800555666: OK 
+== captura 19-800-silenciada
+ok: Rechazar [246,1140][402,1193]
+== captura 20-registro-final
+== Modo vibración: al tocar Rechazar la tarjeta se cierra
+== timbre: Ringer mode: 
+== llamada entrante 911112222: OK 
+== captura 21-vibracion-identificador
+== captura 22-tras-tocar-rechazar
+== captura 23-sin-tarjeta
+== listo
