@@ -176,6 +176,22 @@ adb shell am start -W -n $PKG/.MainActivity --es tab registro >/dev/null
 sleep 3
 shot 20-registro-final
 
+log "Modo vibración: al tocar Rechazar la tarjeta se cierra"
+adb shell cmd media_session volume --stream 2 --set 0 >/dev/null 2>&1
+log "timbre: $(adb shell dumpsys audio | grep -i -m1 'ringer mode' | tr -d '\r')"
+adb shell input keyevent KEYCODE_HOME
+sleep 1
+call 911112222
+sleep 5
+shot 21-vibracion-identificador
+adb shell input tap 282 426
+sleep 3
+shot 22-tras-tocar-rechazar
+hangup 911112222
+sleep 6
+shot 23-sin-tarjeta
+adb shell cmd media_session volume --stream 2 --set 5 >/dev/null 2>&1
+
 adb logcat -d -v time -s Filtro:* AndroidRuntime:E > "$OUT/logcat-filtro.txt"
 adb logcat -d -v time > "$OUT/logcat-completo.txt"
 grep -n "FATAL EXCEPTION" -A 40 "$OUT/logcat-completo.txt" > "$OUT/errores.txt" || echo "sin errores" > "$OUT/errores.txt"

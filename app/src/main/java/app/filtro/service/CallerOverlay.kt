@@ -29,8 +29,9 @@ import kotlin.math.roundToInt
 
 /**
  * Tarjeta que aparece sobre la pantalla de llamada entrante con el tipo de número.
- * Se cierra sola al contestar, al cortar o a los 35 segundos. Se puede arrastrar
- * hacia arriba o abajo (recuerda la posición) y se cierra con un toque.
+ * Se cierra sola al contestar o cortar, cuando tocas la pantalla de llamada, o tras unos
+ * segundos si el teléfono no está sonando en voz alta. Se puede arrastrar hacia arriba o
+ * abajo (recuerda la posición) y se cierra con un toque.
  */
 object CallerOverlay {
 
@@ -160,7 +161,9 @@ object CallerOverlay {
             WindowManager.LayoutParams.MATCH_PARENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
+                WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
             PixelFormat.TRANSLUCENT,
         ).apply {
             gravity = Gravity.TOP or Gravity.START
@@ -173,9 +176,18 @@ object CallerOverlay {
             private var downY = 0f
             private var startY = 0
             private var dragging = false
+            private var closing = false
 
             override fun onTouch(v: View, e: MotionEvent): Boolean {
                 when (e.actionMasked) {
+                    MotionEvent.ACTION_OUTSIDE -> {
+                        // Tocaste la pantalla de llamada (contestar, cortar) u otra cosa: la tarjeta ya cumplió.
+                        if (!closing) {
+                            closing = true
+                            main.postDelayed({ if (current === root) detach(app) }, 1200)
+                        }
+                        return false
+                    }
                     MotionEvent.ACTION_DOWN -> {
                         downY = e.rawY
                         startY = params.y
@@ -204,17 +216,20 @@ object CallerOverlay {
 
         wm.addView(root, params)
         current = root
-        watchCall(app)
+        watchCall(app, silenced)
     }
 
-    /** Sin pedir permisos de teléfono: mira el modo de audio para saber si contestaron o cortaron. */
-    private fun watchCall(app: Context) {
+    /**
+     * Sin pedir permisos de teléfono: mira el modo de audio para saber si contestaron o cortaron.
+     * Si el teléfono no suena en voz alta (vibración, silencio o llamada silenciada) Android no da
+     * señal de fin, así que la tarjeta se cierra antes por tiempo.
+     */
+    private fun watchCall(app: Context, silenced: Boolean) {
         val am = app.getSystemService(AudioManager::class.java) ?: return
         val started = SystemClock.elapsedRealtime()
         val initial = am.mode
         val busyAtStart = initial == AudioManager.MODE_IN_CALL || initial == AudioManager.MODE_IN_COMMUNICATION
         var sawRinging = initial == AudioManager.MODE_RINGTONE
-        val limit = if (busyAtStart) 15_000L else 35_000L
 
         val r = object : Runnable {
             override fun run() {
@@ -223,6 +238,12 @@ object CallerOverlay {
                 val answered = !busyAtStart &&
                     (mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION)
                 val ended = sawRinging && mode == AudioManager.MODE_NORMAL
+                val limit = when {
+                    busyAtStart -> 15_000L
+                    sawRinging -> 45_000L
+                    silenced -> 12_000L
+                    else -> 18_000L
+                }
                 val expired = SystemClock.elapsedRealtime() - started > limit
                 if (answered || ended || expired) detach(app) else main.postDelayed(this, 400)
             }
