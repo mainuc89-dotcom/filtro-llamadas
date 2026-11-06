@@ -320,7 +320,7 @@ private fun LookupResult(query: String, config: Config) {
                 )
             }
             Spacer(Modifier.height(10.dp))
-            Monospace(info.display)
+            Digits(info.display)
             Spacer(Modifier.height(4.dp))
             Text(info.detail, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))

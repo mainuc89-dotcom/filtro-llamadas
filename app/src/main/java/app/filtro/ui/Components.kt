@@ -32,9 +32,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import app.filtro.core.LogEntry
 import java.time.Instant
 import java.time.LocalDate
@@ -155,12 +155,13 @@ fun ActionRow(icon: ImageVector, text: String, color: Color = MaterialTheme.colo
 @Composable
 fun AddRow(text: String, onClick: () -> Unit) = ActionRow(Icons.Outlined.Add, text, onClick = onClick)
 
+/** Números con cifras de ancho fijo, para que se lean alineados. */
 @Composable
-fun Monospace(text: String, modifier: Modifier = Modifier, color: Color = MaterialTheme.colorScheme.onSurface) {
+fun Digits(text: String, modifier: Modifier = Modifier, color: Color = MaterialTheme.colorScheme.onSurface) {
     Text(
         text,
         modifier = modifier,
-        style = MaterialTheme.typography.titleMedium.copy(fontFamily = FontFamily.Monospace),
+        style = MaterialTheme.typography.titleMedium.copy(fontFeatureSettings = "tnum", letterSpacing = 0.4.sp),
         color = color,
     )
 }

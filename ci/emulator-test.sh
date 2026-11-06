@@ -31,11 +31,19 @@ log "Concediendo rol y permisos"
 adb shell cmd role add-role-holder android.app.role.CALL_SCREENING $PKG
 adb shell appops set $PKG SYSTEM_ALERT_WINDOW allow
 adb shell pm grant $PKG android.permission.POST_NOTIFICATIONS
-log "rol: $(adb shell cmd role get-role-holders android.app.role.CALL_SCREENING | tr -d '\r')"
+# El rol se aplica de forma asíncrona: esperar a que quede asignado.
+holders=""
+for i in $(seq 1 40); do
+  holders=$(adb shell cmd role get-role-holders android.app.role.CALL_SCREENING | tr -d '\r')
+  echo "$holders" | grep -q "$PKG" && break
+  sleep 1
+done
+log "rol asignado a: $holders (tras ${i}s)"
+sleep 2
 adb shell input keyevent KEYCODE_HOME
 sleep 1
 adb shell am start -W -n $PKG/.MainActivity --es tab inicio >/dev/null
-sleep 3
+sleep 4
 shot 02-inicio-activo
 
 adb logcat -c
@@ -75,7 +83,7 @@ hangup +18765551234
 sleep 3
 
 adb shell dumpsys telecom > "$OUT/telecom.txt" 2>&1
-adb logcat -d -v time -s Filtro:* AndroidRuntime:E > "$OUT/logcat-filtro.txt"
+adb logcat -d -v time -s Filtro:* AndroidRuntime:E > "$OUT/logcat-filtro-parcial.txt"
 
 log "Notificaciones"
 adb shell cmd statusbar expand-notifications
@@ -122,7 +130,53 @@ shot 16-oscuro-identificador
 hangup 452123456
 sleep 2
 adb shell cmd uimode night no
+sleep 2
 
+log "Pantalla bloqueada: llamada de celular"
+adb shell svc power stayon false
+adb shell input keyevent KEYCODE_SLEEP
+sleep 3
+call 987654321
+sleep 7
+shot 17-bloqueado-identificador
+hangup 987654321
+sleep 2
+adb shell svc power stayon true
+adb shell input keyevent KEYCODE_WAKEUP
+sleep 1
+adb shell wm dismiss-keyguard
+sleep 2
+
+log "Modo silenciar: el 800 entra sin sonar"
+adb shell am start -W -n $PKG/.MainActivity --es tab reglas >/dev/null
+sleep 3
+adb shell input swipe 540 1900 540 600 500
+sleep 1
+adb shell input swipe 540 1900 540 600 500
+sleep 2
+tap_text "Silenciar"
+sleep 2
+shot 18-reglas-silenciar
+adb shell input keyevent KEYCODE_HOME
+sleep 1
+call 800555666
+sleep 6
+shot 19-800-silenciada
+hangup 800555666
+sleep 3
+adb shell am start -W -n $PKG/.MainActivity --es tab reglas >/dev/null
+sleep 3
+adb shell input swipe 540 1900 540 600 500
+sleep 1
+adb shell input swipe 540 1900 540 600 500
+sleep 2
+tap_text "Rechazar"
+sleep 1
+adb shell am start -W -n $PKG/.MainActivity --es tab registro >/dev/null
+sleep 3
+shot 20-registro-final
+
+adb logcat -d -v time -s Filtro:* AndroidRuntime:E > "$OUT/logcat-filtro.txt"
 adb logcat -d -v time > "$OUT/logcat-completo.txt"
 grep -n "FATAL EXCEPTION" -A 40 "$OUT/logcat-completo.txt" > "$OUT/errores.txt" || echo "sin errores" > "$OUT/errores.txt"
 log "listo"

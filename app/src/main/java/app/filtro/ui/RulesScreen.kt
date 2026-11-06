@@ -79,7 +79,7 @@ fun RulesScreen(config: Config, status: SystemStatus, actions: SystemActions) {
                             .padding(start = 20.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Monospace(normalizePrefix(rule.prefix), Modifier.widthIn(min = 56.dp))
+                        Digits(normalizePrefix(rule.prefix), Modifier.widthIn(min = 56.dp))
                         Spacer(Modifier.width(12.dp))
                         Text(
                             Rules.describePrefix(rule.prefix, home),

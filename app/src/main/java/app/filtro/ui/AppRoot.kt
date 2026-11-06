@@ -54,6 +54,7 @@ fun AppRoot(tabRequest: MutableState<String?>, lookupRequest: MutableState<Strin
     val status = rememberSystemStatus()
     val actions = rememberSystemActions(status)
     var openEntry by remember { mutableStateOf<LogEntry?>(null) }
+    LaunchedEffect(log.size) { status.refresh() }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,

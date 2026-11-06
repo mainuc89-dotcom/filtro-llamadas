@@ -15,8 +15,10 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -25,6 +27,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import app.filtro.core.NumberInfo
+import kotlinx.coroutines.delay
 
 /** Estado de los permisos del sistema; se vuelve a leer cada vez que la app pasa al frente. */
 @Stable
@@ -35,6 +38,15 @@ class SystemStatus(private val context: Context) {
         private set
     var notifications by mutableStateOf(true)
         private set
+
+    /** Cambia cada vez que se pide volver a revisar (tras un diálogo de permisos). */
+    var pulse by mutableIntStateOf(0)
+        private set
+
+    fun recheck() {
+        refresh()
+        pulse++
+    }
 
     fun refresh() {
         val rm = context.getSystemService(RoleManager::class.java)
@@ -54,12 +66,21 @@ fun rememberSystemStatus(): SystemStatus {
     val context = LocalContext.current
     val status = remember { SystemStatus(context.applicationContext) }
     val owner = LocalLifecycleOwner.current
+    var resumes by remember { mutableIntStateOf(0) }
     DisposableEffect(owner) {
         val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_RESUME) status.refresh()
+            if (event == Lifecycle.Event.ON_RESUME) resumes++
         }
         owner.lifecycle.addObserver(observer)
         onDispose { owner.lifecycle.removeObserver(observer) }
+    }
+    // Android puede tardar unos segundos en aplicar un rol o permiso recién concedido.
+    LaunchedEffect(resumes, status.pulse) {
+        status.refresh()
+        delay(1200)
+        status.refresh()
+        delay(3000)
+        status.refresh()
     }
     return status
 }
@@ -74,9 +95,9 @@ class SystemActions(
 @Composable
 fun rememberSystemActions(status: SystemStatus): SystemActions {
     val context = LocalContext.current
-    val role = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { status.refresh() }
-    val settings = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { status.refresh() }
-    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { status.refresh() }
+    val role = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { status.recheck() }
+    val settings = rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { status.recheck() }
+    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { status.recheck() }
 
     return remember(status) {
         val openDefaultApps = {
