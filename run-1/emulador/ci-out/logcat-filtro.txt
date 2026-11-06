@@ -1,0 +1,5 @@
+--------- beginning of main
+11-06 22:36:06.195 I/Filtro  ( 3047): Llamada 809 123 4567: blocked Prefijo 809
+11-06 22:36:12.899 I/Filtro  ( 3047): Llamada +56 9 1234 5678: allowed 
+11-06 22:36:27.779 I/Filtro  ( 3047): Llamada 600 600 2020: allowed 
+11-06 22:36:35.864 I/Filtro  ( 3047): Llamada +1 876 555 1234: allowed 

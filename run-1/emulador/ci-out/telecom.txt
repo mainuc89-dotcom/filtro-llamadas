@@ -1,0 +1,379 @@
+CallsManager: 
+  mCalls: 
+  mCallAudioManager:
+    All calls:
+    Active dialing, or connecting calls:
+    Ringing calls:
+    Holding calls:
+    Foreground call:
+    null
+    CallAudioModeStateMachine:
+      History:
+      2026-11-06T22:35:21.282661 - Enter UNFOCUSED
+      2026-11-06T22:36:00.339318 - Enter RINGING
+      2026-11-06T22:36:00.634813 - Mode MODE_RINGTONE
+      2026-11-06T22:36:04.011357 - Enter UNFOCUSED
+      2026-11-06T22:36:04.011434 - Mode MODE_NORMAL
+      2026-11-06T22:36:12.998971 - Enter RINGING
+      2026-11-06T22:36:13.250263 - Mode MODE_RINGTONE
+      2026-11-06T22:36:21.931438 - Enter UNFOCUSED
+      2026-11-06T22:36:21.931498 - Mode MODE_NORMAL
+      2026-11-06T22:36:28.423480 - Enter RINGING
+      2026-11-06T22:36:28.616433 - Mode MODE_RINGTONE
+      2026-11-06T22:36:33.033080 - Enter UNFOCUSED
+      2026-11-06T22:36:33.033140 - Mode MODE_NORMAL
+      2026-11-06T22:36:36.017998 - Enter RINGING
+      2026-11-06T22:36:36.145361 - Mode MODE_RINGTONE
+      2026-11-06T22:36:45.055090 - Enter UNFOCUSED
+      2026-11-06T22:36:45.055178 - Mode MODE_NORMAL
+      Pending Msg:
+      Looper (CallAudioModeStateMachine, tid 203) {4855b21}
+        (Total messages: 0, polling=true, quitting=false)
+    CallAudioRouteStateMachine:
+      Current state: QuiescentSpeakerRoute
+      Pending messages:
+        Looper (com.android.server.telecom.CallAudioRouteStateMachine, tid 202) {b120b46}
+          (Total messages: 0, polling=true, quitting=false)
+    BluetoothDeviceManager:
+      2026-11-06T22:35:21.817198 - Got BluetoothHearingAid: android.bluetooth.BluetoothHearingAid@9fae683
+      2026-11-06T22:35:21.824270 - Got BluetoothHeadset: android.bluetooth.BluetoothHeadset@6d1b9dc
+  mTtyManager:
+    mCurrentTtyMode: 0
+  mInCallController:
+    mInCallServices (InCalls registered):
+    ServiceConnections (InCalls bound):
+    CarModeTracker:
+      Current car mode apps:
+      Car mode history:
+  mCallDiagnosticServiceController:
+    activeCallDiagnosticService: 
+    isConnected: false
+  mCallAnomalyWatchdog:
+    Anomaly log:
+    Pending timeouts: 
+    Pending destruction: 
+  mEmergencyCallDiagnosticLogger:
+      PERSISTED DIAGNOSTIC DATA FROM DROP BOX
+      END OF PERSISTED DIAGNOSTIC DATA FROM DROP BOX
+  mDefaultDialerCache:
+    User 0: com.google.android.dialer
+  mConnectionServiceRepository:
+    mServiceCache:
+  mRoleManager:
+    DefaultCallRedirectionApp: 
+    DefaultCallScreeningApp: 
+    DefaultCallCompanionApps: (override ) 
+  mConnectionSvrFocusMgr:
+    Call Focus History:
+PhoneAccountRegistrar: 
+  xmlVersion: 0
+  defaultOutgoing: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  outgoingPhoneAccountForTelScheme: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  simCallManager: null
+  phoneAccounts:
+    [[X] PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} Capabilities: CallProvider MultiUser PlaceEmerg SimSub  Audio Routes: BESW Schemes: tel voicemail  Extras: Bundle[{android.telecom.extra.SUPPORTS_VIDEO_CALLING_FALLBACK=true}] GroupId: ***]
+    test emergency PhoneAccount filter: null
+Analytics:
+  Call TC@1: {
+      startTime: 0
+      endTime: 1794004563874
+      direction: INCOMING
+      isAdditionalCall: false
+      isInterrupted: false
+      isEmergency: false
+      callTechnologies: [GSM ]
+      callTerminationReason: DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]
+      missedReason: [short_ring ]
+      connectionService: com.android.phone/com.android.services.telephony.TelephonyConnectionService
+      isVideoCall: false
+      inCallServices: [
+      name: com.google.android.dialer/com.android.incallui.InCallServiceImpl type: 2 is crashed: false service last time in ms: 5896
+      name: android/com.android.server.companion.datatransfer.contextsync.CallMetadataSyncInCallService type: 4 is crashed: false service last time in ms: 5873
+      name: com.google.android.bluetooth/com.android.bluetooth.telephony.BluetoothInCallService type: 4 is crashed: false service last time in ms: 5854
+  ]
+      callProperties: []
+      callSource: UNSPECIFIED
+  }
+  
+  Call TC@2: {
+      startTime: 0
+      endTime: 1794004566453
+      direction: INCOMING
+      isAdditionalCall: false
+      isInterrupted: false
+      isEmergency: false
+      callTechnologies: [GSM ]
+      callTerminationReason: DisconnectCause [ Code: (REJECTED) Label: () Description: () Reason: (INCOMING_REJECTED) Tone: (27)  TelephonyCause: 16/-1 ImsReasonInfo: null]
+      missedReason: []
+      connectionService: com.android.phone/com.android.services.telephony.TelephonyConnectionService
+      isVideoCall: false
+      inCallServices: [
+  ]
+      callProperties: []
+      callSource: UNSPECIFIED
+  }
+  
+  Call TC@3: {
+      startTime: 0
+      endTime: 1794004581851
+      direction: INCOMING
+      isAdditionalCall: false
+      isInterrupted: false
+      isEmergency: false
+      callTechnologies: [GSM ]
+      callTerminationReason: DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]
+      missedReason: []
+      connectionService: com.android.phone/com.android.services.telephony.TelephonyConnectionService
+      isVideoCall: false
+      inCallServices: [
+      name: com.google.android.dialer/com.android.incallui.InCallServiceImpl type: 2 is crashed: false service last time in ms: 10982
+      name: android/com.android.server.companion.datatransfer.contextsync.CallMetadataSyncInCallService type: 4 is crashed: false service last time in ms: 10965
+      name: com.google.android.as/com.google.android.apps.miphone.aiai.captions.tulip.audiosource.impl.CIS type: 4 is crashed: false service last time in ms: 10962
+      name: com.google.android.bluetooth/com.android.bluetooth.telephony.BluetoothInCallService type: 4 is crashed: false service last time in ms: 10967
+  ]
+      callProperties: []
+      callSource: UNSPECIFIED
+  }
+  
+  Call TC@4: {
+      startTime: 0
+      endTime: 1794004592848
+      direction: INCOMING
+      isAdditionalCall: false
+      isInterrupted: false
+      isEmergency: false
+      callTechnologies: [GSM ]
+      callTerminationReason: DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]
+      missedReason: [short_ring ]
+      connectionService: com.android.phone/com.android.services.telephony.TelephonyConnectionService
+      isVideoCall: false
+      inCallServices: [
+      name: com.google.android.dialer/com.android.incallui.InCallServiceImpl type: 2 is crashed: false service last time in ms: 6691
+      name: android/com.android.server.companion.datatransfer.contextsync.CallMetadataSyncInCallService type: 4 is crashed: false service last time in ms: 6644
+      name: com.google.android.as/com.google.android.apps.miphone.aiai.captions.tulip.audiosource.impl.CIS type: 4 is crashed: false service last time in ms: 6644
+      name: com.google.android.bluetooth/com.android.bluetooth.telephony.BluetoothInCallService type: 4 is crashed: false service last time in ms: 6641
+  ]
+      callProperties: []
+      callSource: UNSPECIFIED
+  }
+  
+  Call TC@5: {
+      startTime: 0
+      endTime: 1794004605004
+      direction: INCOMING
+      isAdditionalCall: false
+      isInterrupted: false
+      isEmergency: false
+      callTechnologies: [GSM ]
+      callTerminationReason: DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]
+      missedReason: []
+      connectionService: com.android.phone/com.android.services.telephony.TelephonyConnectionService
+      isVideoCall: false
+      inCallServices: [
+      name: com.google.android.dialer/com.android.incallui.InCallServiceImpl type: 2 is crashed: false service last time in ms: 11141
+      name: android/com.android.server.companion.datatransfer.contextsync.CallMetadataSyncInCallService type: 4 is crashed: false service last time in ms: 11141
+      name: com.google.android.as/com.google.android.apps.miphone.aiai.captions.tulip.audiosource.impl.CIS type: 4 is crashed: false service last time in ms: 11141
+      name: com.google.android.bluetooth/com.android.bluetooth.telephony.BluetoothInCallService type: 4 is crashed: false service last time in ms: 11110
+  ]
+      callProperties: []
+      callSource: UNSPECIFIED
+  }
+  
+  CSW.sDc: 192.60
+  CSW.rC: 1624.20
+  Hardware Version: 
+  Past analytics dumps: 
+Historical Events:
+  CallTC@1 [Nov 6, 2026 10:35:58 PM](MT - incoming)(User=UserHandle{0})
+  	>>>Target PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} (T-Mobile)
+  	>>>Conn mgr: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  	To address: tel:*******56 Verstat: not Presentation: Allowed
+    22:35:58.679 - CREATED (null;null):TSI.aNIC(cap)@AOg
+    22:35:58.819 - BIND_CS (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):TSI.aNIC(cap)@AOg
+    22:35:58.926 - CS_BOUND (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):SBC.oSC(cap)@AOo
+    22:35:58.928 - START_CONNECTION (tel:*******56 via:com.android.phone):SBC.oSC(cap)@AOo
+    22:35:59.103 - CAPABILITY_CHANGE (Current: [[ sup_hld mut !v2a spd_aud]], Removed [[]], Added [[ sup_hld mut !v2a spd_aud]]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AOo
+    22:35:59.217 - FILTERING_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AOo
+    22:35:59.225 - DIRECT_TO_VM_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AOo
+    22:35:59.235 - DND_PRE_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AOo
+    22:35:59.239 - DIRECT_TO_VM_FINISHED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC(cap/cast)@E-E-AOo
+    22:35:59.250 - DND_PRE_CHECK_COMPLETED (false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AOo
+    22:35:59.251 - BLOCK_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AOo
+    22:35:59.322 - BLOCK_CHECK_FINISHED (not blocked [Allow, logged, notified]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS(cap/cast)@E-E-AOo
+    22:35:59.330 - SCREENING_BOUND (ComponentInfo{com.google.android.dialer/com.android.dialer.callscreeningservice.impl.CallScreeningServiceImpl})
+    22:35:59.764 - SCREENING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Phone, mCallScreeningComponentName = com.google.android.dialer/com.android.dialer.callscreeningservice.impl.CallScreeningServiceImpl]):NCSSF.aC@AOw
+    22:35:59.815 - SET_RINGING (successful incoming call):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AOw
+    22:36:00.353 - FILTERING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Phone, mCallScreeningComponentName = com.google.android.dialer/com.android.dialer.callscreeningservice.impl.CallScreeningServiceImpl]):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AOw
+    22:36:00.543 - FLASH_NOTIFICATION_START:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AOw
+    22:36:00.545 - START_RINGER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AOw
+    22:36:00.632 - START_VIBRATOR (hasVibrator=true, userRequestsVibrate=true, ringerMode=2, isVibrating=false):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->ARP.hP@AOw
+    22:36:00.667 - AUDIO_ROUTE (Leaving state QuiescentSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AOw
+    22:36:00.668 - AUDIO_ROUTE (Entering state ActiveSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AOw
+    22:36:00.668 - AUDIO_ROUTE_SPEAKER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AOw
+    22:36:03.874 - SET_DISCONNECTED (disconnected set explicitly> DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]):CSW.sDc(cap)@AR8
+    22:36:03.930 - LOG_CALL (number=*******56,postDial=,pres=1):CSW.sDc(cap)@AR8
+    22:36:03.992 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@ASQ
+    22:36:04.008 - FLASH_NOTIFICATION_STOP:CSW.sDc->CAMSM.pM_1002(cap)@AR8
+    22:36:04.009 - STOP_RINGER:CSW.sDc->CAMSM.pM_1002(cap)@AR8
+    22:36:04.009 - STOP_VIBRATOR:CSW.sDc->CAMSM.pM_1002(cap)@AR8
+    22:36:04.036 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@ASo
+    22:36:04.070 - DESTROYED:CSW.rC->CM.pR(cap)@ASw
+    Timings (average for this call, milliseconds):
+      bind_cs: 107.00
+      block_check_finished: 71.00
+      direct_to_vm_finished: 14.00
+      dnd_pre_check_completed: 15.00
+      filtering_completed: 1136.00
+  CallTC@2 [Nov 6, 2026 10:36:05 PM](MT - incoming)(User=UserHandle{0})
+  	>>>Target PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} (T-Mobile)
+  	>>>Conn mgr: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  	To address: tel:********67 Verstat: not Presentation: Allowed
+    22:36:05.801 - CREATED (null;null):TSI.aNIC(cap)@AVo
+    22:36:05.803 - BIND_CS (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):TSI.aNIC(cap)@AVo
+    22:36:05.930 - CS_BOUND (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):SBC.oSC(cap)@AVs
+    22:36:05.930 - START_CONNECTION (tel:********67 via:com.android.phone):SBC.oSC(cap)@AVs
+    22:36:05.971 - CAPABILITY_CHANGE (Current: [[ sup_hld mut !v2a spd_aud]], Removed [[]], Added [[ sup_hld mut !v2a spd_aud]]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AVs
+    22:36:06.118 - FILTERING_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AVs
+    22:36:06.119 - DIRECT_TO_VM_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AVs
+    22:36:06.143 - DND_PRE_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AVs
+    22:36:06.143 - DND_PRE_CHECK_COMPLETED (false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AVs
+    22:36:06.143 - BLOCK_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AVs
+    22:36:06.156 - DIRECT_TO_VM_FINISHED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC(cap/cast)@E-E-AVs
+    22:36:06.187 - BLOCK_CHECK_FINISHED (not blocked [Allow, logged, notified]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS(cap/cast)@E-E-AVs
+    22:36:06.195 - SCREENING_BOUND (ComponentInfo{app.filtro/app.filtro.service.ScreeningService})
+    22:36:06.199 - SCREENING_COMPLETED ([Reject, logged, mCallBlockReason = 1, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.dC@AVw
+    22:36:06.232 - SET_RINGING (blocking call):NCSSF.dC->ICFG.sF->ICFG.sF->ICFG.sF@AVw
+    22:36:06.237 - REQUEST_REJECT (internal):NCSSF.dC->ICFG.sF->ICFG.sF->ICFG.sF@AVw
+    22:36:06.243 - LOG_CALL (number=********67,postDial=,pres=1):NCSSF.dC->ICFG.sF->ICFG.sF->ICFG.sF@AVw
+    22:36:06.265 - FILTERING_COMPLETED ([Reject, logged, mCallBlockReason = 1, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.dC->ICFG.sF->ICFG.sF->ICFG.sF@AVw
+    22:36:06.453 - SET_DISCONNECTED (disconnected set explicitly> DisconnectCause [ Code: (REJECTED) Label: () Description: () Reason: (INCOMING_REJECTED) Tone: (27)  TelephonyCause: 16/-1 ImsReasonInfo: null]):CSW.sDc(cap)@AWc
+    22:36:06.457 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@AWg
+    22:36:06.457 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@AWk
+    22:36:06.458 - DESTROYED:CSW.rC->CM.pR(cap)@AWo
+    Timings (average for this call, milliseconds):
+      bind_cs: 127.00
+      block_check_finished: 44.00
+      direct_to_vm_finished: 37.00
+      dnd_pre_check_completed: 0.00
+      filtering_completed: 147.00
+      reject: 216.00
+  CallTC@3 [Nov 6, 2026 10:36:12 PM](MT - incoming)(User=UserHandle{0})
+  	>>>Target PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} (T-Mobile)
+  	>>>Conn mgr: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  	To address: tel:*******78 Verstat: not Presentation: Allowed
+    22:36:12.798 - CREATED (null;null):TSI.aNIC(cap)@AXI
+    22:36:12.800 - BIND_CS (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):TSI.aNIC(cap)@AXI
+    22:36:12.854 - CS_BOUND (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):SBC.oSC(cap)@AXM
+    22:36:12.854 - START_CONNECTION (tel:*******78 via:com.android.phone):SBC.oSC(cap)@AXM
+    22:36:12.862 - CAPABILITY_CHANGE (Current: [[ sup_hld mut !v2a spd_aud]], Removed [[]], Added [[ sup_hld mut !v2a spd_aud]]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AXM
+    22:36:12.865 - FILTERING_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AXM
+    22:36:12.866 - DIRECT_TO_VM_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AXM
+    22:36:12.871 - DIRECT_TO_VM_FINISHED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC(cap/cast)@E-E-AXM
+    22:36:12.871 - DND_PRE_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AXM
+    22:36:12.871 - DND_PRE_CHECK_COMPLETED (false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AXM
+    22:36:12.871 - BLOCK_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AXM
+    22:36:12.895 - BLOCK_CHECK_FINISHED (not blocked [Allow, logged, notified]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS(cap/cast)@E-E-AXM
+    22:36:12.899 - SCREENING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.aC@AXQ
+    22:36:12.902 - SCREENING_BOUND (ComponentInfo{app.filtro/app.filtro.service.ScreeningService})
+    22:36:12.934 - SET_RINGING (successful incoming call):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AXQ
+    22:36:13.016 - FILTERING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AXQ
+    22:36:13.206 - FLASH_NOTIFICATION_START:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AXQ
+    22:36:13.206 - START_RINGER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AXQ
+    22:36:13.657 - AUDIO_ROUTE (Leaving state QuiescentSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AXQ
+    22:36:13.657 - AUDIO_ROUTE (Entering state ActiveSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AXQ
+    22:36:13.657 - AUDIO_ROUTE_SPEAKER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AXQ
+    22:36:13.841 - START_VIBRATOR (hasVibrator=true, userRequestsVibrate=true, ringerMode=2, isVibrating=false):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->ARP.hP@AXQ
+    22:36:21.851 - SET_DISCONNECTED (disconnected set explicitly> DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]):CSW.sDc(cap)@AbM
+    22:36:21.892 - LOG_CALL (number=*******78,postDial=,pres=1):CSW.sDc(cap)@AbM
+    22:36:21.923 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@AbY
+    22:36:21.924 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@Abc
+    22:36:21.930 - DESTROYED:CSW.rC->CM.pR(cap)@Abg
+    22:36:21.931 - FLASH_NOTIFICATION_STOP:CSW.sDc->CAMSM.pM_1002(cap)@AbM
+    22:36:21.931 - STOP_RINGER:CSW.sDc->CAMSM.pM_1002(cap)@AbM
+    22:36:21.931 - STOP_VIBRATOR:CSW.sDc->CAMSM.pM_1002(cap)@AbM
+    Timings (average for this call, milliseconds):
+      bind_cs: 54.00
+      block_check_finished: 24.00
+      direct_to_vm_finished: 5.00
+      dnd_pre_check_completed: 0.00
+      filtering_completed: 151.00
+  CallTC@4 [Nov 6, 2026 10:36:26 PM](MT - incoming)(User=UserHandle{0})
+  	>>>Target PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} (T-Mobile)
+  	>>>Conn mgr: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  	To address: tel:********20 Verstat: not Presentation: Allowed
+    22:36:26.278 - CREATED (null;null):TSI.aNIC(cap)@Af8
+    22:36:26.343 - BIND_CS (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):TSI.aNIC(cap)@Af8
+    22:36:26.645 - CS_BOUND (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):SBC.oSC(cap)@AgE
+    22:36:26.645 - START_CONNECTION (tel:********20 via:com.android.phone):SBC.oSC(cap)@AgE
+    22:36:27.447 - CAPABILITY_CHANGE (Current: [[ sup_hld mut !v2a spd_aud]], Removed [[]], Added [[ sup_hld mut !v2a spd_aud]]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AgE
+    22:36:27.735 - FILTERING_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-AgE
+    22:36:27.737 - DIRECT_TO_VM_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AgE
+    22:36:27.737 - DND_PRE_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AgE
+    22:36:27.738 - DND_PRE_CHECK_COMPLETED (false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AgE
+    22:36:27.738 - BLOCK_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-AgE
+    22:36:27.760 - DIRECT_TO_VM_FINISHED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC(cap/cast)@E-E-AgE
+    22:36:27.771 - BLOCK_CHECK_FINISHED (not blocked [Allow, logged, notified]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS(cap/cast)@E-E-AgE
+    22:36:27.779 - SCREENING_BOUND (ComponentInfo{app.filtro/app.filtro.service.ScreeningService})
+    22:36:27.779 - SCREENING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.aC@AgI
+    22:36:28.116 - SET_RINGING (successful incoming call):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AgI
+    22:36:28.431 - FILTERING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF@AgI
+    22:36:28.441 - FLASH_NOTIFICATION_START:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AgI
+    22:36:28.441 - START_RINGER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002@AgI
+    22:36:28.700 - AUDIO_ROUTE (Leaving state QuiescentSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AgI
+    22:36:28.700 - AUDIO_ROUTE (Entering state ActiveSpeakerRoute):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AgI
+    22:36:28.700 - AUDIO_ROUTE_SPEAKER:NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS@AgI
+    22:36:28.898 - START_VIBRATOR (hasVibrator=true, userRequestsVibrate=true, ringerMode=2, isVibrating=false):NCSSF.aC->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->ARP.hP@AgI
+    22:36:32.848 - SET_DISCONNECTED (disconnected set explicitly> DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]):CSW.sDc(cap)@AjQ
+    22:36:32.886 - LOG_CALL (number=********20,postDial=,pres=1):CSW.sDc(cap)@AjQ
+    22:36:33.032 - FLASH_NOTIFICATION_STOP:CSW.sDc->CAMSM.pM_1002(cap)@AjQ
+    22:36:33.032 - STOP_RINGER:CSW.sDc->CAMSM.pM_1002(cap)@AjQ
+    22:36:33.032 - STOP_VIBRATOR:CSW.sDc->CAMSM.pM_1002(cap)@AjQ
+    22:36:33.040 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@Ajg
+    22:36:33.042 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@Ajw
+    22:36:33.052 - DESTROYED:CSW.rC->CM.pR(cap)@Aj4
+    Timings (average for this call, milliseconds):
+      bind_cs: 302.00
+      block_check_finished: 33.00
+      direct_to_vm_finished: 23.00
+      dnd_pre_check_completed: 1.00
+      filtering_completed: 696.00
+  CallTC@5 [Nov 6, 2026 10:36:35 PM](MT - incoming)(User=UserHandle{0})
+  	>>>Target PhoneAccount: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0} (T-Mobile)
+  	>>>Conn mgr: ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}, 1, UserHandle{0}
+  	To address: tel:**********34 Verstat: not Presentation: Allowed
+    22:36:35.762 - CREATED (null;null):TSI.aNIC(cap)@AnY
+    22:36:35.767 - BIND_CS (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):TSI.aNIC(cap)@AnY
+    22:36:35.822 - CS_BOUND (ComponentInfo{com.android.phone/com.android.services.telephony.TelephonyConnectionService}):SBC.oSC(cap)@Anc
+    22:36:35.822 - START_CONNECTION (tel:**********34 via:com.android.phone):SBC.oSC(cap)@Anc
+    22:36:35.833 - CAPABILITY_CHANGE (Current: [[ sup_hld mut !v2a spd_aud]], Removed [[]], Added [[ sup_hld mut !v2a spd_aud]]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-Anc
+    22:36:35.847 - FILTERING_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC(cap/cast)@E-E-Anc
+    22:36:35.849 - DIRECT_TO_VM_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:35.849 - DND_PRE_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:35.849 - DND_PRE_CHECK_COMPLETED (false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:35.849 - BLOCK_CHECK_INITIATED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:35.857 - DIRECT_TO_VM_FINISHED:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC(cap/cast)@E-E-Anc
+    22:36:35.860 - BLOCK_CHECK_FINISHED (not blocked [Allow, logged, notified]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS(cap/cast)@E-E-Anc
+    22:36:35.865 - SCREENING_BOUND (ComponentInfo{app.filtro/app.filtro.service.ScreeningService})
+    22:36:35.865 - SCREENING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):NCSSF.aC@Ang
+    22:36:35.932 - SET_RINGING (successful incoming call):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:36.053 - FILTERING_COMPLETED ([Allow, logged, notified, mCallScreeningAppName = Filtro, mCallScreeningComponentName = app.filtro/app.filtro.service.ScreeningService]):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF(cap/cast)@E-E-Anc
+    22:36:36.133 - FLASH_NOTIFICATION_START:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002(cap/cast)@E-E-Anc
+    22:36:36.134 - START_RINGER:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002(cap/cast)@E-E-Anc
+    22:36:36.210 - AUDIO_ROUTE (Leaving state QuiescentSpeakerRoute):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS(cap/cast)@E-E-Anc
+    22:36:36.210 - AUDIO_ROUTE (Entering state ActiveSpeakerRoute):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS(cap/cast)@E-E-Anc
+    22:36:36.211 - AUDIO_ROUTE_SPEAKER:(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->CARSM.pM_SWITCH_FOCUS(cap/cast)@E-E-Anc
+    22:36:36.655 - START_VIBRATOR (hasVibrator=true, userRequestsVibrate=true, ringerMode=2, isVibrating=false):(...->CS.crCo->H.CS.crCo->H.CS.crCo.pICR)->CSW.hCCC->ICFG.sF->ICFG.sF->ICFG.sF->CILH.sL->CILH.oQC->BCF.gBS->BCF.gBS->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->ICFG.sF->CAMSM.pM_2002->ARP.hP(cap/cast)@E-E-Anc
+    22:36:45.004 - SET_DISCONNECTED (disconnected set explicitly> DisconnectCause [ Code: (MISSED) Label: () Description: () Reason: (INCOMING_MISSED) Tone: (27)  TelephonyCause: 1/-1 ImsReasonInfo: null]):CSW.sDc(cap)@AqY
+    22:36:45.025 - LOG_CALL (number=**********34,postDial=,pres=1):CSW.sDc(cap)@AqY
+    22:36:45.049 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@Aqo
+    22:36:45.054 - FLASH_NOTIFICATION_STOP:CSW.sDc->CAMSM.pM_1002(cap)@AqY
+    22:36:45.054 - STOP_RINGER:CSW.sDc->CAMSM.pM_1002(cap)@AqY
+    22:36:45.054 - STOP_VIBRATOR:CSW.sDc->CAMSM.pM_1002(cap)@AqY
+    22:36:45.082 - CONF_CALLS_CHANGED ():CSW.sCC(cap)@Aq0
+    22:36:45.084 - DESTROYED:CSW.rC->CM.pR(cap)@ArA
+    Timings (average for this call, milliseconds):
+      bind_cs: 55.00
+      block_check_finished: 11.00
+      direct_to_vm_finished: 8.00
+      dnd_pre_check_completed: 0.00
+      filtering_completed: 206.00
