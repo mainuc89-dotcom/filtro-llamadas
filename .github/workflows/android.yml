@@ -82,7 +82,8 @@ jobs:
   release:
     name: Publicar versión
     needs: [build, emulator]
-    if: startsWith(github.ref, 'refs/tags/v')
+    # Cada cambio en main que pasa las pruebas queda publicado como la última versión.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -91,10 +92,13 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          name: Filtro ${{ github.ref_name }}
+          tag_name: v1.0.${{ github.run_number }}
+          name: Filtro 1.0.${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
           files: Filtro.apk
           make_latest: true
           body: |
             **Para instalar:** abre esta página en tu celular Android, toca **Filtro.apk** y acepta instalar.
             Si aparece "Play Protect no reconoce esta app", toca *Más detalles → Instalar de todas formas*.
             Al abrir Filtro, toca **Activar filtro** y elige Filtro como app de identificación de llamadas.
+            Las versiones nuevas se instalan encima de la anterior sin perder tus reglas.

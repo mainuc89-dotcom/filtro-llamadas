@@ -30,6 +30,6 @@ Si Android dice "Configuración restringida": Ajustes → Apps → Filtro → me
 
 ## Cómo se compila
 
-Cada cambio en `main` se compila y se prueba en un emulador Android 14 con GitHub Actions (`.github/workflows/android.yml`). El script `ci/emulator-test.sh` simula llamadas desde 800, 809, 600, celulares, fijos y un número internacional; revisa el bloqueo, el modo silenciar, el identificador con pantalla bloqueada y en modo oscuro. Si el mensaje del commit incluye `[capturas]`, las capturas y registros quedan en la rama `ci-resultados`. Al crear una etiqueta `v*` se publica el APK en *Releases*.
+Cada cambio en `main` se compila y se prueba en un emulador Android 14 con GitHub Actions (`.github/workflows/android.yml`). El script `ci/emulator-test.sh` simula llamadas desde 800, 809, 600, celulares, fijos y un número internacional; revisa el bloqueo, el modo silenciar, el identificador con pantalla bloqueada y en modo oscuro. Si el mensaje del commit incluye `[capturas]`, las capturas y registros quedan en la rama `ci-resultados`. Si todo pasa, el APK se publica solo en *Releases* como la última versión.
 
 También puedes abrir la carpeta en Android Studio y compilar desde ahí.
