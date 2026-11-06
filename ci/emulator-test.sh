@@ -195,4 +195,5 @@ adb shell cmd media_session volume --stream 2 --set 5 >/dev/null 2>&1
 adb logcat -d -v time -s Filtro:* AndroidRuntime:E > "$OUT/logcat-filtro.txt"
 adb logcat -d -v time > "$OUT/logcat-completo.txt"
 grep -n "FATAL EXCEPTION" -A 40 "$OUT/logcat-completo.txt" > "$OUT/errores.txt" || echo "sin errores" > "$OUT/errores.txt"
+gzip -9 -f "$OUT/logcat-completo.txt"
 log "listo"

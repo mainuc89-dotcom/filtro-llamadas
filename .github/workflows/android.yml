@@ -39,8 +39,9 @@ jobs:
           path: Filtro.apk
           retention-days: 30
 
+      # Solo si el mensaje del commit incluye [capturas]: guarda el registro en la rama ci-resultados.
       - name: Guardar registro de compilación
-        if: always() && github.ref_type == 'branch'
+        if: always() && github.ref_type == 'branch' && contains(github.event.head_commit.message, '[capturas]')
         run: bash ci/push-results.sh build "${{ job.status }}" build.log app/build/reports
 
   emulator:
@@ -75,7 +76,7 @@ jobs:
           script: bash ci/emulator-test.sh
 
       - name: Guardar capturas
-        if: always() && github.ref_type == 'branch'
+        if: always() && github.ref_type == 'branch' && contains(github.event.head_commit.message, '[capturas]')
         run: bash ci/push-results.sh emulador "${{ job.status }}" ci-out
 
   release:

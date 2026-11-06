@@ -13,8 +13,8 @@ Bloqueo e identificación de llamadas para Android. Sin anuncios, sin cuentas y 
 
 ## Instalar
 
-1. En el celular abre la página de la última versión: `https://github.com/<tu-usuario>/filtro-llamadas/releases/latest`
-2. Toca **Filtro.apk** y acepta instalar. Si Android pide permiso para instalar apps desde el navegador, dalo.
+1. En el celular abre **https://github.com/mainuc89-dotcom/filtro-llamadas/releases/latest/download/Filtro.apk** (descarga directa de la última versión).
+2. Abre el archivo descargado y acepta instalar. Si Android pide permiso para instalar apps desde el navegador, dalo.
    Si Play Protect avisa que no reconoce la app: *Más detalles → Instalar de todas formas*.
 3. Abre Filtro → **Activar filtro** → elige *Filtro* como app de identificación de llamadas y spam.
 4. Toca **Permitir** en *Ver quién llama* y activa *Mostrar sobre otras apps*.
@@ -30,6 +30,6 @@ Si Android dice "Configuración restringida": Ajustes → Apps → Filtro → me
 
 ## Cómo se compila
 
-Cada cambio en `main` se compila y se prueba en un emulador con GitHub Actions (`.github/workflows/android.yml`): el script simula llamadas desde 800, 809, 600, un celular y un número internacional, y guarda capturas. Al crear una etiqueta `v*` se publica el APK en *Releases*.
+Cada cambio en `main` se compila y se prueba en un emulador Android 14 con GitHub Actions (`.github/workflows/android.yml`). El script `ci/emulator-test.sh` simula llamadas desde 800, 809, 600, celulares, fijos y un número internacional; revisa el bloqueo, el modo silenciar, el identificador con pantalla bloqueada y en modo oscuro. Si el mensaje del commit incluye `[capturas]`, las capturas y registros quedan en la rama `ci-resultados`. Al crear una etiqueta `v*` se publica el APK en *Releases*.
 
 También puedes abrir la carpeta en Android Studio y compilar desde ahí.
